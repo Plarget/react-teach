@@ -1,5 +1,5 @@
 # React + TypeScript + Vite
-Сайт: https://mellow-croquembouche-895862.netlify.app/
+Сайт: https://jazzy-trifle-4b73d6.netlify.app/
 
 ## Тестовое задание: React
 
