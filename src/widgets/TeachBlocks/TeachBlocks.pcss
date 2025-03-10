@@ -1,0 +1,62 @@
+@import "@/shared/styles/mixins.pcss";
+@import "@/shared/styles/media.pcss";
+
+.teach-blocks {
+    margin-bottom: 170px;
+
+    @media (--mobile) {
+        margin-bottom: 48px;
+    }
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 30px;
+
+        @media (--tablet-xs) {
+            display: flex;
+            flex-direction: column;
+            row-gap: 23px;
+        }
+    }
+
+    &__block {
+        background-color: #2D2C2A;
+        padding: 52px 56px;
+
+
+        @media (--mobile) {
+            padding: 32px 18px;
+        }
+
+        &.is-red {
+            --block-clip-size: 43px;
+            background-color: var(--color-red);
+            position: relative;
+            clip-path: polygon(0 0, calc(100% - var(--block-clip-size)) 0, 100% var(--block-clip-size), 100% 100%, 0 100%);
+
+            &::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: var(--block-clip-size);
+                height: var(--block-clip-size);
+                background-color: var(--color-red-dark);
+                clip-path: polygon(100% 100%, 0 0, 0 100%);
+            }
+
+            @media (--mobile) {
+                --block-clip-size: 26px
+            }
+        }
+
+        &-title {
+            margin-bottom: 24px;
+        }
+
+        &-description {
+            max-width: 496px;
+        }
+    }
+}
